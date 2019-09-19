@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<table border="2">
+
+  <tr>
+    <th><strong>First name:</strong></th>
+    <td><%= @customer.first_name %></td>
+  </tr>
+
+  <tr>
+    <th><strong>Last name:</strong></th>
+    <td><%= @customer.last_name %></td>
+  </tr>
+
+  <tr>
+    <th><strong>Phone number:</strong></th>
+    <td><%= @customer.phone_number %></td>
+  </tr>
+
+</table>
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%#= link_to 'Back', root_path %>
+<%= link_to 'Booking', customer_bookings_path(customer_id: @customer.id) %> |
+
+<%# if session[:customer_id] %>
+  <%= link_to 'Logout', root_path	%>
+<%# end %>

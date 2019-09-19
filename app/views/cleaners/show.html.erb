@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @cleaner.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @cleaner.last_name %>
+</p>
+
+<p>
+  <strong>Quality score:</strong>
+  <%= @cleaner.quality_score %>
+</p>
+
+
+<h1>Cleaner Bookings</h1>
+
+<table border="1">
+    <tr>
+      <th>Customer</th>
+      <th>Date</th>
+    </tr>
+
+     <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= "#{booking.customer.first_name} #{booking.customer.last_name}" %></td>
+        <td><%= booking.date %></td>
+      </tr>
+    <% end %>
+</table>
+
+<%= link_to 'Edit', edit_cleaner_path(@cleaner) %> |
+<%= link_to 'Back', cleaners_path %>

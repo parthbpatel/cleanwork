@@ -1,0 +1,29 @@
+<%= form_for(@cleaner) do |f| %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %><br>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %><br>
+  </div>
+  <div class="field">
+    <%= f.label :quality_score %><br>
+    <%= f.text_field :quality_score %><br>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone_number %><br>
+    <%= f.text_field :phone_number %><br>
+  </div>
+
+  <%= f.collection_check_boxes :city_ids, City.all, :id, :city do |b| %>
+    <%= b.check_box %>
+    <%= b.label %><br>
+  <% end %>
+
+  <div class="actions"><br>
+    <%= f.submit %>
+  </div>
+<% end %>

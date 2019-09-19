@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CleanWork</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav class="navbar navbar-success bg-dark">
+<%#= link_to 'Bookings', bookings_path %>
+<%#= link_to 'Customers', customers_path %>
+<center>
+<%= link_to 'Clean Work', root_path, class: "btn btn-success" %>
+</center>
+<%#= link_to 'Cleaners', cleaners_path %>
+</nav>
+
+
+<%= yield %>
+
+</body>
+</html>

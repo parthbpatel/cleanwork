@@ -1,0 +1,10 @@
+<%= form_with model: @city, local: true do |c| %>
+  <div>
+    <%= c.label :city%><br>
+    <%= c.text_field :name %>
+  </div><br>
+  <div>
+    <%= c.submit %><br>
+    <%= link_to 'Back', root_path%>
+  </div>
+<% end %>

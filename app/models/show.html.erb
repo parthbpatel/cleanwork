@@ -1,0 +1,20 @@
+<p>
+  <strong>First name:</strong>
+  <%= @customer.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @customer.last_name %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @customer.phone_number %>
+</p>
+
+<%= link_to 'Bookings', customer_cities_path(customer_id: @customer.id) %><br>
+<%= link_to 'Customer booking', customer_my_booking_path(customer_id: @customer.id) %><br>
+
+<%= link_to 'Edit', edit_customer_path(@customer) %><br>
+<%= link_to 'Back', customers_path() %>

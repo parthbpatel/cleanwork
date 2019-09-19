@@ -1,0 +1,12 @@
+<h1><center>Select City</h1>
+<table>
+  <tr>
+    <th>City Name</th>
+    <th>Action</th>
+  </tr>
+  <% @cities.each do |city| %>
+    <tr>
+	     <td><%= city.name.upcase %></td>
+       <td><%= link_to 'Booking', new_customer_city_booking_path(city_id: city.id)%></td>
+    </tr>
+<% end %></table>
