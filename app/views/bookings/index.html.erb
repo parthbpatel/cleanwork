@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Your Bookings</h1>
+<center><h1>Your Bookings</h1></center>
+<%= link_to 'New Booking', new_customer_booking_path, class: "btn btn-primary" %><br><br>
 
-<table border="2">
+<table class="table table-hover" width="10%">
     <tr>
       <th>Customer</th>
       <th>Cleaner</th>
@@ -17,7 +18,3 @@
       </tr>
     <% end %>
 </table>
-
-<br>
-
-<%= link_to 'New Booking', new_customer_booking_path %>

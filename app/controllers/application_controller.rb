@@ -2,7 +2,7 @@
 
 # main class
 class ApplicationController < ActionController::Base
-  before_action :check_session, only: %i[edit update new show]
+  before_action :check_session, only: %i[edit update show]
 
   protect_from_forgery with: :exception
   include SessionsHelper

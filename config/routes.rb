@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  get    '/signup', 	to: 'customers#new'
+  get    '/signup',   to: 'customers#new'
   post   '/signup',   to: 'customers#create'
   get    '/login',    to: 'sessions#new'
   post   '/login',    to: 'sessions#create'
-  get '/logout',   to: 'sessions#destroy', as: 'logout'
-
+  get '/logout', to: 'sessions#destroy', as: 'logout'
 
   resources :customers do
     resources :bookings do
@@ -16,24 +17,6 @@ Rails.application.routes.draw do
   resources :cities
   root 'sessions#new'
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #   get 'sessions/new'
 #   post 'login' => 'sessions#create'

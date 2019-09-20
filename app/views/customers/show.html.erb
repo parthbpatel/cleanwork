@@ -16,12 +16,12 @@
     <td><%= @customer.phone_number %></td>
   </tr>
 
-</table>
+</table><br><br>
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Edit', edit_customer_path(@customer), class: "btn btn-primary"%> |
 <%#= link_to 'Back', root_path %>
-<%= link_to 'Booking', customer_bookings_path(customer_id: @customer.id) %> |
+<%= link_to 'Booking', customer_bookings_path(customer_id: @customer.id), class: "btn btn-primary" %> |
 
 <%# if session[:customer_id] %>
-  <%= link_to 'Logout', logout_path, :method => :delete	%>
+  <%= link_to 'Logout', logout_path, :method => :delete, class: "btn btn-primary"	%>
 <%# end %>
