@@ -1,5 +1,6 @@
-module SessionsHelper
+# frozen_string_literal: true
 
+module SessionsHelper
   # Logs in the given user.
   def log_in(customer)
     session[:customer_id] = customer.id
@@ -18,14 +19,14 @@ module SessionsHelper
       @current_customer ||= Customer.find_by(id: customer_id)
     elsif (customer_id = cookies.signed[:customer_id])
       customer = Customer.find_by(id: customer_id)
-      if customer && customer.authenticated?(:remember, cookies[:remember_token])
+      if customer&.authenticated?(:remember, cookies[:remember_token])
         log_in customer
         @current_customer = customer
       end
     end
   end
 
-  def current_user?(customer)
+  def current_customer?(customer)
     customer == current_customer
   end
 

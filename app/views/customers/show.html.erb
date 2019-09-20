@@ -23,5 +23,5 @@
 <%= link_to 'Booking', customer_bookings_path(customer_id: @customer.id) %> |
 
 <%# if session[:customer_id] %>
-  <%= link_to 'Logout', root_path	%>
+  <%= link_to 'Logout', logout_path, :method => :delete	%>
 <%# end %>

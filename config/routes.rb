@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   post   '/signup',   to: 'customers#create'
   get    '/login',    to: 'sessions#new'
   post   '/login',    to: 'sessions#create'
-  delete '/logout',   to: 'sessions#destroy'
+  get '/logout',   to: 'sessions#destroy', as: 'logout'
 
 
   resources :customers do

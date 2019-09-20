@@ -5,7 +5,9 @@ class CustomersController < ApplicationController
   before_action :set_customer, only: %i[show edit update destroy]
 
   def index
+    current_customer = Customer.find_by_id(session[:current_customer_id])
     @customers = Customer.all
+    @cities = City.all
     @booking = Booking.all
   end
 
@@ -24,8 +26,10 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to @customer,
-                                notice: 'Customer was successfully created.' }
+        format.html do
+          redirect_to @customer,
+                      notice: 'Customer was successfully created.'
+        end
       else
         format.html { render :new }
       end
@@ -35,8 +39,10 @@ class CustomersController < ApplicationController
   def update
     respond_to do |format|
       if @customer.update(customer_params)
-        format.html { redirect_to @customer,
-                                notice: 'Customer was successfully updated.' }
+        format.html do
+          redirect_to @customer,
+                      notice: 'Customer was successfully updated.'
+        end
       else
         format.html { render :edit }
       end
@@ -48,8 +54,10 @@ class CustomersController < ApplicationController
     @customer.destroy
     redirect_to customers_url
     respond_to do |format|
-      format.html { redirect_to @customer,
-                              notice: 'Customer Destroyed.' }
+      format.html do
+        redirect_to @customer,
+                    notice: 'Customer Destroyed.'
+      end
     end
   end
 
