@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   private
 
   def check_session
-    redirect_to 'sessions/new' if session[:customer_id].blank?
+    render 'sessions/new' if session[:customer_id].blank?
   end
 
   def logged_in_customer
